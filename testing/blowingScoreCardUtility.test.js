@@ -1,13 +1,13 @@
 const {score,bestScore}=require('../blowingScoreCardUtility');
 
-discribe('Blowing Score Card testing',()=>{
-discribe('1 game Score verifying',()=>{
+describe('Blowing Score Card testing',()=>{
+describe('1 game Score verifying',()=>{
 it('should return total score when 1 full game of 10 frames given',()=>{
 let result = score([3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6]);
 expect(result).toBe(90);
 });
 it('should return total score when 1 full game of 10 frames given',()=>{
-    let result = score([30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10]);
+    let result = score([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10]);
     expect(result).toBe(30);
     });
     it('should return total score when 1 full game of 10 frames given',()=>{
@@ -15,9 +15,9 @@ it('should return total score when 1 full game of 10 frames given',()=>{
         expect(result).toBe(16);
         });
 });
-discribe('Error of single game Score ',()=>{
+describe('Error of single game Score ',()=>{
   it('should throw error when non array is given as input',()=>{
-    expect(score(12)).toThrow('Unsportted Input');
+    expect(()=>{score(12)}).toThrow('Unsportted Input');
   })  
   
 
